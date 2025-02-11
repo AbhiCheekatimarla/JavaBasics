@@ -1,15 +1,22 @@
-
 interface IHelloWorld {
-
     void sayHello();
 }
 
 class Implementation implements IHelloWorld {
-
-    @java.lang.Override
+    @Override
     public void sayHello() {
-        System.out.println("Implementaion in Implementation Class");
+        System.out.println("Implementation in Implementation Class");
     }
 }
 
-IHelloWorld imp = () -> System.out.println{"Implemented Using lambda"}
+public class HelloWorld {
+    public static void main(String[] args) {
+        // Using traditional class-based implementation
+        IHelloWorld obj = new Implementation();
+        obj.sayHello();
+
+        // Using lambda expression to implement the interface
+        IHelloWorld imp = () -> System.out.println("Implemented Using Lambda");
+        imp.sayHello(); // Calling the lambda implementation
+    }
+}
